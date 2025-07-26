@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pickaro - Pre-order, pick up, skip the wait! Order ahead from your favorite restaurants and skip the line with convenient pickup.">
+    <meta name="keywords" content="food pre-order, pickup, skip the line, restaurant ordering, quick pickup, food collection">
+    <meta name="author" content="Pickaro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pickaro - Pre-order, Pick Up, Skip the Wait">
+    <meta property="og:description" content="Order ahead from your favorite restaurants and skip the line with convenient pickup.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/pickaro-logo.png') }}">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pickaro">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pickaro - Pre-order, Pick Up, Skip the Wait">
+    <meta name="twitter:description" content="Order ahead from your favorite restaurants and skip the line with convenient pickup.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/pickaro-logo.png') }}">
+    
+    <title>Pickaro - Pre-order, Pick Up, Skip the Wait</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/favicon.jpg') }}">
+    <link rel="shortcut icon" type="image/jpeg" href="{{ url_for('static', filename='images/favicon.jpg') }}">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Pickaro",
+        "description": "Food pre-ordering and pickup service app",
+        "applicationCategory": "Food & Drink",
+        "operatingSystem": "Android, iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/pickaro-logo.png') }}" alt="Pickaro" class="navbar-logo">
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/become-partner">Partner with Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/promote-us">Promote Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="https://play.google.com/store/apps/details?id=com.trinity.pickaro&hl=en_IN" target="_blank">Download App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="mobile-hero-illustration mb-4">
+                        <img src="{{ url_for('static', filename='images/mobile-hero-illustration.png') }}" alt="Food pickup illustration" class="img-fluid">
+                    </div>
+                    <h1 class="hero-title mb-4">
+                        Food take away made easy<br>
+                        <span class="text-success" style="font-size: 0.7em; margin-top: 15px; display: inline-block;">Why waiting ? When you can pre-order</span>
+                    </h1>
+                    <p class="hero-subtitle mb-4">Order ahead from your favorite restaurants and skip the line with convenient pickup. Fresh food ready when you arrive.</p>
+                    
+                    <div class="download-buttons mb-4">
+                        <a href="http://apps.apple.com/in/app/pickaro-food-pickup-app/id6745446760" target="_blank" class="btn btn-download me-3 mb-3">
+                            <img src="{{ url_for('static', filename='images/app-store.svg') }}" alt="Download on App Store" width="180" height="60">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.trinity.pickaro&hl=en_IN" target="_blank" class="btn btn-download mb-3">
+                            <img src="{{ url_for('static', filename='images/google-play.svg') }}" alt="Get it on Google Play" width="180" height="60">
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="text-dark">950+</h3>
+                                    <p class="small">Partner Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="text-dark">10K+</h3>
+                                    <p class="small">Happy Customers</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="text-dark">4.9★</h3>
+                                    <p class="small">App Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <div class="phone-mockup-container">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <img src="{{ url_for('static', filename='images/pickaro-app-screenshot.png') }}" alt="Pickaro App Screenshot" class="app-screenshot">
+                            </div>
+                        </div>
+                        <div class="phone-mockup phone-mockup-2">
+                            <div class="phone-screen">
+                                <div class="app-screen-content">
+                                    <div class="status-bar">
+                                        <span class="time">9:41</span>
+                                        <div class="battery-info">
+                                            <span class="signal-bars">••••</span>
+                                            <i class="fas fa-battery-three-quarters"></i>
+                                        </div>
+                                    </div>
+                                    <div class="order-status">
+                                        <div class="order-header">
+                                            <h3>Order Status</h3>
+                                            <span class="order-number">#P2024</span>
+                                        </div>
+                                        <div class="pickup-time">
+                                            <h2>Ready for pickup in</h2>
+                                            <div class="countdown">08:32</div>
+                                        </div>
+                                        <div class="pickup-location">
+                                            <h4>Pickup Location</h4>
+                                            <p>Bella's Pizzeria</p>
+                                            <p>123 Main Street</p>
+                                        </div>
+                                        <div class="pickup-code">
+                                            <h4>Pickup Code</h4>
+                                            <div class="code">P2024</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">Why Choose Pickaro?</h2>
+                    <p class="section-subtitle">Experience the future of food ordering with our innovative pickup service</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Skip the Line</h4>
+                        <p>Order ahead and bypass the wait. Your food is ready when you arrive, saving you valuable time.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Browse Menus</h4>
+                        <p>Explore extensive menus from hundreds of restaurants. Find exactly what you're craving.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h4>Easy Payments</h4>
+                        <p>Secure payment options with multiple methods. Pay once, pick up hassle-free.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Real-time Updates</h4>
+                        <p>Get instant notifications when your order is ready for pickup. Never wait unnecessarily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section py-5">
+        <div class="how-it-works-background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title text-white">How Pickaro Works</h2>
+                    <p class="section-subtitle text-white">Simple steps to get your food without the wait</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="step-card text-center">
+                                <div class="step-number">1</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4>Browse & Order Ahead</h4>
+                                <p>Browse menus, pick items, and place your takeaway order directly through the Pickaro app.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="step-card text-center">
+                                <div class="step-number">2</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <h4>Restaurant Prepares Order</h4>
+                                <p>Your chosen restaurant swiftly receives your order and gets it ready for scheduled pickup.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="step-card text-center">
+                                <div class="step-number">3</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-hand-holding"></i>
+                                </div>
+                                <h4>Hassle-Free Collection</h4>
+                                <p>Head to the outlet, collect your freshly prepared order, skipping the wait.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="step-card text-center">
+                                <div class="step-number">4</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-smile"></i>
+                                </div>
+                                <h4>Enjoy Your Meal!</h4>
+                                <p>Experience quick service and the convenience of pre-ordering with Pickaro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <div class="how-it-works-phone-container">
+                        <div class="phone-mockup phone-mockup-how-it-works">
+                            <div class="phone-screen">
+                                <div class="app-screen-content">
+                                    <div class="status-bar">
+                                        <span class="time">9:41</span>
+                                        <div class="battery-info">
+                                            <span class="signal-bars">••••</span>
+                                            <i class="fas fa-battery-three-quarters"></i>
+                                        </div>
+                                    </div>
+                                    <div class="order-status">
+                                        <div class="order-header">
+                                            <h3>Order Status</h3>
+                                            <span class="order-number">#P2024</span>
+                                        </div>
+                                        <div class="pickup-time">
+                                            <h2>Ready for pickup in</h2>
+                                            <div class="countdown">08:32</div>
+                                        </div>
+                                        <div class="pickup-location">
+                                            <h4>Pickup Location</h4>
+                                            <p>Bella's Pizzeria</p>
+                                            <p>123 Main Street</p>
+                                        </div>
+                                        <div class="pickup-code">
+                                            <h4>Pickup Code</h4>
+                                            <div class="code">P2024</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Join thousands of satisfied customers who love skipping the line</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Pickaro has revolutionized my lunch breaks! I can order ahead and pick up my food without any wait time. It's a game-changer for busy professionals."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Priya Sharma</h5>
+                                <p>Marketing Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The app is so intuitive and the pickup process is seamless. I love being able to schedule my pickup time around my schedule. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Rahul Gupta</h5>
+                                <p>Software Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Perfect for families! I can order for everyone while the kids are getting ready, and we just pick it up on our way out. No more waiting with hungry children!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Anjali Patel</h5>
+                                <p>Parent & Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="contact-background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title text-white">Get in Touch</h2>
+                    <p class="section-subtitle text-white">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4>Call Us</h4>
+                            <p>9540075407<br>Mon-Fri: 9AM-6PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4>Email Us</h4>
+                            <p>email@pickaro.in</p>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <img src="{{ url_for('static', filename='images/pickaro-logo.png') }}" alt="Pickaro" class="footer-logo">
+                        <p>Pre-order, pick up, skip the wait. The future of food ordering is here.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="/become-partner">Partner with Us</a></li>
+                        <li><a href="/promote-us">Promote Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#safety">Safety</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom text-center">
+                        <p>&copy; 2024 Pickaro. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

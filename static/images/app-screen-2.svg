@@ -1,0 +1,50 @@
+<svg width="270" height="570" viewBox="0 0 270 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="270" height="570" fill="#ffffff"/>
+  
+  <!-- Status Bar -->
+  <rect width="270" height="40" fill="#f8f9fa"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#333">9:41</text>
+  <text x="220" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#333">100%</text>
+  
+  <!-- Header with Back Button -->
+  <rect x="0" y="40" width="270" height="70" fill="#dc3545"/>
+  <text x="20" y="75" font-family="Arial, sans-serif" font-size="16" fill="white">←</text>
+  <text x="50" y="75" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white">Tony's Pizza Palace</text>
+  <text x="230" y="75" font-family="Arial, sans-serif" font-size="16" fill="white">❤️</text>
+  <text x="20" y="95" font-family="Arial, sans-serif" font-size="12" fill="white">⭐ 4.8 • Italian • 25-35 min</text>
+  
+  <!-- Restaurant Image -->
+  <rect x="0" y="110" width="270" height="120" fill="#ffeef0"/>
+  <text x="120" y="175" font-family="Arial, sans-serif" font-size="40" fill="#dc3545">🍕</text>
+  
+  <!-- Menu Section -->
+  <text x="20" y="260" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#333">Popular Items</text>
+  
+  <!-- Menu Item 1 -->
+  <rect x="20" y="280" width="230" height="80" rx="8" fill="#f8f9fa"/>
+  <circle cx="50" cy="320" r="20" fill="#ffeef0"/>
+  <text x="43" y="327" font-family="Arial, sans-serif" font-size="16">🍕</text>
+  <text x="80" y="305" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333">Margherita Pizza</text>
+  <text x="80" y="320" font-family="Arial, sans-serif" font-size="11" fill="#666">Fresh mozzarella, basil, tomato sauce</text>
+  <text x="80" y="335" font-family="Arial, sans-serif" font-size="12" color="#28a745" font-weight="600" fill="#28a745">$18.99</text>
+  <rect x="210" y="310" width="30" height="20" rx="10" fill="#dc3545"/>
+  <text x="222" y="322" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">+</text>
+  
+  <!-- Menu Item 2 -->
+  <rect x="20" y="370" width="230" height="80" rx="8" fill="#f8f9fa"/>
+  <circle cx="50" cy="410" r="20" fill="#e8f5e9"/>
+  <text x="43" y="417" font-family="Arial, sans-serif" font-size="16">🥗</text>
+  <text x="80" y="395" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333">Caesar Salad</text>
+  <text x="80" y="410" font-family="Arial, sans-serif" font-size="11" fill="#666">Romaine lettuce, parmesan, croutons</text>
+  <text x="80" y="425" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#28a745">$12.99</text>
+  <rect x="210" y="400" width="30" height="20" rx="10" fill="#e9ecef"/>
+  <text x="222" y="412" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#666">+</text>
+  
+  <!-- Cart Button -->
+  <rect x="20" y="480" width="230" height="50" rx="25" fill="#28a745"/>
+  <text x="40" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">🛒</text>
+  <text x="65" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white">View Cart</text>
+  <text x="200" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white">$18.99</text>
+  <text x="110" y="510" font-family="Arial, sans-serif" font-size="12" fill="white">1 item</text>
+</svg>

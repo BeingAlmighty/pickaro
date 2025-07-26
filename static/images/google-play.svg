@@ -1,0 +1,22 @@
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="googlePlayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="180" height="60" rx="12" fill="url(#googlePlayGradient)" />
+  <rect width="180" height="60" rx="12" fill="none" stroke="#555" stroke-width="1" />
+  
+  <!-- Google Play Logo -->
+  <path d="M25 15 L35 25 L25 35 L20 30 L20 20 Z" fill="#34A853" />
+  <path d="M35 25 L40 20 L45 25 L40 30 Z" fill="#EA4335" />
+  <path d="M25 35 L35 25 L45 35 L40 40 L30 40 Z" fill="#FBBC04" />
+  <path d="M25 15 L35 25 L45 15 L40 10 L30 10 Z" fill="#4285F4" />
+  
+  <!-- Text -->
+  <text x="55" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="400" fill="white">GET IT ON</text>
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="white">Google Play</text>
+</svg>
