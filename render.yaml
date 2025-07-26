@@ -10,3 +10,15 @@ services:
         value: "3.12.8"
       - key: SESSION_SECRET
         generateValue: true
+      - key: GOOGLE_PROJECT_ID
+        value: "mealsfly-465908"
+      - key: GOOGLE_PRIVATE_KEY_ID
+        value: "b0be13162b1cc30b21ea6afc7e6e48ab19b5272b"
+      - key: GOOGLE_CLIENT_EMAIL
+        value: "mealsfly@mealsfly-465908.iam.gserviceaccount.com"
+      - key: GOOGLE_CLIENT_ID
+        value: "104052847552527103619"
+      - key: GOOGLE_PRIVATE_KEY
+        sync: false  # You'll need to set this manually in Render dashboard
+      - key: GOOGLE_SHEET_URL
+        value: "https://docs.google.com/spreadsheets/d/1YpViCb3PIZm8G7WGGdrSG2PpfYK73qEgANAMRzhLu0o/edit?usp=sharing"

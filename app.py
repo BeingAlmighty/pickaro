@@ -20,27 +20,28 @@ def get_google_sheet(sheet_name):
         import json
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
         
-        # Use hardcoded credentials for the service account
+        # Use environment variables for service account credentials
         creds_dict = {
             'type': 'service_account',
-            'project_id': 'mealsfly-465908',
-            'private_key_id': 'b0be13162b1cc30b21ea6afc7e6e48ab19b5272b',
-            'private_key': '-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC0GQ/Z798niSo0\njtJBjog4uznLCA0ATRld3ROr4APcCIlkXOZIOzU8vtj35gMhZlqhSccZG0oB3Sxq\nGCA/he1fs1xP2Aj8lRCRcx/gwCaY3Py1PEwNXItCwg5QjE9balkbuEKhIxSEwFee\nyYPB9DEcOdND8a0J9e9uhU8QDUQz89H2Did+d5yDloufNFplRTiwTxCGPYsG14xw\nSwrvQ0neJX85yuW7l4qGHBTkfQf0aS00EUF48mca1veWaAF8rq5+ofrGmnawrU4y\n/QSntv/GrVRJXbfA9kjRss4Mu8hCoOkV5cLYqR46WdIfASw3p8/qdqB1Iq3/E1Cw\nqNXQBRGXAgMBAAECggEAJdteyaDyd40Noh6jc8RSPhqc+2Cl2vpZ6rEeAXMFXKsu\ntjoQ7f4EItC7KuDep5asVlr7zvs9g0bKn0KTBMdSLlu1e9MdkHqFEQ3yFXxOoLNT\nK4WRNv3NCCtiduwHgl/Ie1swJk8JcR49TNNvLsX1zMka751NklpwCftbszQWshSi\n88CgNuyVuTZJkqrtfMgUR14echApwN0ESLLVU0VpAFn7l/JjiQxDK5M8BR3PXKXl\nyiGu+g5xfVduv0ZlqdErU1ISR9QGGFK51es3DImrRRzPvT5JBwd1m98c3DrBp076\ncU+wvvD7ZjIwmlxwTfrUqaVzVzFi0gEFL5a3sPYZAQKBgQD93aJ9OoiZN++nq0+7\nE+wuNmdqm4OFQjFBXoQFpAyV8kFi1vUts5MVq8GUp2VAbMvGHSB0TJaiNlZbNT2+\n+vhm8elGrrwf91NRJ+ZCVk0GMOJAXa0SJK1mX8fcV86tIE1ztcdpeS6ZD2HeInoy\nwt/7Seix/EObWhK4Sjlv4hi12QKBgQC1nKpT5lWnUC+cIUz7WK12arJReOAoiVr5\nMqYNzYqeaB52cNjGr2rOzEKS0K69OeoRdVovEtYN0QKdvdYGJR2ngOBxAqQZ1uuj\nrx7X4QKoI8QmKw7ImLUstxuLNwO+CCY7ZBfFCAgnYDw2WtXdnGprlkHfEsy/7JZQ\nu4wakAIs7wKBgQCw6Y495Neipud9GhZDEdwqTEF/eoaKDBnVKy+n2q3mpN9KKPDN\ne3IJzRrnJEycO/U5x7yBL4pd2q4Ne6ne+Hi5DOZ7GnQBdtL6IGsHWartoI1bO6zL\nkwG/8QmPlSVzYqp283vXFdsSUTTrn203CLUcImJl/p2Cmp+nDBrAzHhZ6QKBgQCf\nunJz6BldVkEJaKB0T8IAbEb5MP61qFjC47D4YtaQC7L/KLD/zjh6OVw0FCYbd1xO\njpAK5t4suK88XUJnlS1HrSm5O0FpGIWXKOZPqC7WAt75UtVlyClQcptfDbvU3wYB\nJj9ho3bIavOKOsnuZyuSBE1bDQXXpxVtXAYVNqMzMQKBgQDeK8mGasGFa28d7+QE\ntAz0vaRfW7IRRseVu66tAsbrabZba3b6CaDo7n/1aKrSPFgOdl8fYKTNVfZVfdP0\nxaDB6DjK3qM82Yu6sVh5r/FvpCkyMpPVaXQuw5ni5DS7xhIrb9g9+eDtk8RJfRmD\nAiZ5okImf4DJuDJpeEBgDKLZMg==\n-----END PRIVATE KEY-----\n',
-            'client_email': 'mealsfly@mealsfly-465908.iam.gserviceaccount.com',
-            'client_id': '104052847552527103619',
+            'project_id': os.environ.get('GOOGLE_PROJECT_ID'),
+            'private_key_id': os.environ.get('GOOGLE_PRIVATE_KEY_ID'),
+            'private_key': os.environ.get('GOOGLE_PRIVATE_KEY', '').replace('\\n', '\n'),
+            'client_email': os.environ.get('GOOGLE_CLIENT_EMAIL'),
+            'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
             'auth_uri': 'https://accounts.google.com/o/oauth2/auth',
             'token_uri': 'https://oauth2.googleapis.com/token',
             'auth_provider_x509_cert_url': 'https://www.googleapis.com/oauth2/v1/certs',
-            'client_x509_cert_url': 'https://www.googleapis.com/robot/v1/metadata/x509/mealsfly%40mealsfly-465908.iam.gserviceaccount.com',
+            'client_x509_cert_url': f"https://www.googleapis.com/robot/v1/metadata/x509/{os.environ.get('GOOGLE_CLIENT_EMAIL', '').replace('@', '%40')}",
             'universe_domain': 'googleapis.com'
         }
-        print("Using hardcoded service account credentials")
+        print("Using environment variables for service account credentials")
         
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         
         print(f"Attempting to open sheet by URL, worksheet: {sheet_name}")
-        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1YpViCb3PIZm8G7WGGdrSG2PpfYK73qEgANAMRzhLu0o/edit?usp=sharing").worksheet(sheet_name)
+        sheet_url = os.environ.get('GOOGLE_SHEET_URL', 'https://docs.google.com/spreadsheets/d/1YpViCb3PIZm8G7WGGdrSG2PpfYK73qEgANAMRzhLu0o/edit?usp=sharing')
+        sheet = client.open_by_url(sheet_url).worksheet(sheet_name)
         print(f"Successfully opened worksheet: {sheet_name}")
         
         # Check if headers exist, if not add them
